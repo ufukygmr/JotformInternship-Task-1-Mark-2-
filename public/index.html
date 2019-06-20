@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.2.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/6.2.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.2.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <h1>Welcome To Task Management System</h1>
+    <h2>Please add your task by writing below !!!!</h2>
+    <section id = "submit" class="submit">
+      <div class="row">
+          <input type="text" id="task">
+          <button onclick="putTask()" id="addTask">Submit</button>
+      </div>
+      <div id = "tasks">      
+      </div>
+    </section>
+    <script>
+        var input = document.getElementById("submit");
+      
+        // Execute a function when the user releases a key on the keyboard
+        input.addEventListener("keyup", (event) => {
+          // Number 13 is the "Enter" key on the keyboard
+          if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("addTask").click();
+          }
+        });
+        </script>
+  </body>
+</html>
+
